@@ -1,29 +1,25 @@
 ## Getting Started
 
-1. Initialize NPM repository
+1. Node project Setup
+2. Installed Dependencies
+3. Add Scripts
+
+## Assignments
+
+1. Create a tuple , which keeps a string as the first value, and boolean as the second.
 
 ```cmd
-npm init -y
+npm run ts_1
 ```
 
-2. Install Typescript and Typescript Compiler as developer dependencies
+2. Create an enum
+   - it should have User, SuperUser, Admin, SuperAdmin
 
 ```cmd
-npm i tsc typescript --save-dev
+npm run ts_2
 ```
 
-3. Create a starting file `index.ts`
-
-- **_Note_**: File Extension is `ts` and not `js`
-
-4. In `package.json` add script
-
-```json
-"serve": "tsc index.ts"
-```
-
-5. You are ready to start with command
-
-```cmd
-npm run serve
-```
+3. Create a tsconfig file
+   - the target version should be latest ES version.
+   - the output should be stored in build folder.
+   - applicable for both of the above assignments.
