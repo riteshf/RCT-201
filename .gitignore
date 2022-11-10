@@ -4,6 +4,7 @@ node_modules/
 
 # Custom
 1.pre-class/
+*.eval/sol/
 **/sol/
 assets/
 notes.md
