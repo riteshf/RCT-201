@@ -1,29 +1,13 @@
-## Getting Started
+# Setup
 
-1. Initialize NPM repository
+- Create a Node Project
+- Install `typescript` and `tsc`
+- Add Scripts to run the file.
 
-```cmd
-npm init -y
-```
+# Assignments
 
-2. Install Typescript and Typescript Compiler as developer dependencies
-
-```cmd
-npm i tsc typescript --save-dev
-```
-
-3. Create a starting file `index.ts`
-
-- **_Note_**: File Extension is `ts` and not `js`
-
-4. In `package.json` add script
-
-```json
-"serve": "tsc index.ts"
-```
-
-5. You are ready to start with command
-
-```cmd
-npm run serve
-```
+1. Create a type name with a string ?
+2. Create a type age with a number ?
+3. Create a type isFetching with boolean ?
+4. Create an array of numbers ?
+5. Create an array of strings ?
