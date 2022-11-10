@@ -19,7 +19,12 @@ npm i tsc typescript --save-dev
 4. In `package.json` add script
 
 ```json
-"serve": "tsc index.ts"
+"serve1": "tsc src/1-basics.ts",
+"serve2": "tsc src/2-basics2.ts",
+"serve3": "tsc src/3-functions.ts",
+"serve4": "tsc src/4-array.ts",
+"serve5": "tsc src/5-object.ts",
+"serve6": "tsc src/6-custom.ts",
 ```
 
 5. You are ready to start with command

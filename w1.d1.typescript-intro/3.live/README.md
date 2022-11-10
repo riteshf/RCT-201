@@ -21,7 +21,7 @@
 
 # Basic Types
 
-## string
+- string
 
 ```ts
 let a: string = "Hello World";
@@ -63,22 +63,21 @@ e = "Hello!"; // Error
 
 - any
   - None of the following lines of code will throw compiler errors.
-  - Using `any` disables all further type checking, and it is assumed
-  - you know the environment better than TypeScript.
+  - Using `any` disables all further type checking, and it is assumed you know the environment better than TypeScript.
 
 ```ts
-let x: any = "Hello";
-x = 1; // Okay
-x = true; // Okay
+let f: any = "Hello";
+f = 1; // Okay
+f = true; // Okay
 ```
 
 - Literal Types
   - When we know what is going to be exact value of a variable, we use literal type
 
 ```ts
-let x: "hello" = "hello";
-x = "hello"; // Okay
-x = "howdy"; // Error
+let g: "hello" = "hello";
+g = "hello"; // Okay
+g = "howdy"; // Error
 ```
 
 - Union Types
@@ -92,23 +91,67 @@ h = "Bye!"; // Okay
 h = true; // Error
 ```
 
+# Functions Types
+
+Functions are the primary means of passing data around in JavaScript. TypeScript allows you to specify the types of both the input and output values of functions.
+
+```ts
+const add = (a: number, b: number): number => {
+  return a + b;
+};
+
+add(1, 1); // Okay
+add(1, "Hello"); // Error
+```
+
+# Array
+
+- To specify the type of an array like `[1, 2, 3]`, you can use the syntax `number[]`.
+- This syntax works for any type (e.g. string[] is an array of strings, and so on).
+- You may also see this written as `Array<number>`.
+
+```ts
+let arr1: number[] = [1, 2, 3];
+arr1.push(4); // Okay
+arr1.push("Hello"); // Error
+
+let arr2: string[] = ["A", "B1DFSDF", "SDSDSCD", "SDFCSDCDS"];
+arr2.push("Hello"); // Okay
+arr2.push(4); // Error
+
+let arr3: Array<number> = [1, 2, 34];
+arr3.push(4); // Okay
+arr3.push("Hello"); // Error
+
+let arr4: Array<string> = ["A", "B1DFSDF", "SDSDSCD", "SDFCSDCDS"];
+arr4.push("Hello"); // Okay
+arr4.push(4); // Error
+
+const arr5: Array<number | string> = [1, 2.5, "csdascs"];
+arr5.push("Hello"); // Okay
+arr5.push(4); // Okay
+arr5.push(false); // Error
+```
+
+- readonly
+  - This restricts us from updating the data.
+  - only applicable to `Array` and `Tuple`
+
+```ts
+let arr6: readonly number[] = [1, 2, 3];
+arr6.push(4); // Error
+arr6.push("Hello"); // Error
+```
+
 ## Object
 
 - Object
-  A very common way of defining an Object, not helpful at all as does not throw any errors.
+  - A common way of defining an Object.
+  - Using `Object` disables all further type checking, and it is assumed you know the environment better than TypeScript.
 
 ```ts
 let user1: Object = { id: 1, name: "Ritesh" };
 user1 = { lastName: "Firodiya" }; // Okay
-```
-
-- Object Literal
-  Helps developer to understand the internal structure of
-
-```ts
-let user2: { id: number; name: string } = { id: 1, name: "Ritesh" };
-user2 = { id: 2, name: "John" }; // Okay
-user2 = { lastNname: "Doe" }; // Error
 ```
 
 - Record
@@ -117,24 +160,30 @@ user2 = { lastNname: "Doe" }; // Error
 ```ts
 let question: Record<string, boolean> = {
   isMarried: false, // Okay
-  isEmployyed: true, // Okay
+  isEmployeed: true, // Okay
   isIndian: true, // Okay
   name: "Ritesh", // Error
 };
 ```
 
-# Functions Types
-
-- Parameter type annotation
-- Return Type Annotations
-- Anonymous Functions
-
-# Object Types
-
-- Object
 - Object Literal
-- Record
+  - Used when we know the internal structure.
 
-# Array
+```ts
+let user2: { id: number; name: string } = { id: 1, name: "Ritesh" };
+user2 = { id: 2, name: "John" }; // Okay
+user2 = { lastNname: "Doe" }; // Error
+```
 
--
+## Custom Type
+
+- Useful for sharing types across multiple places.
+
+```ts
+type User = {
+  id: number;
+  name: string;
+};
+let user3: User = { id: 1, name: "Ritesh" }; // Okay
+let user4: User = { id: 1, lastName: "Firodiya" }; // Error
+```
