@@ -9,7 +9,7 @@
 # Installation
 
 - `npm init -y`
-- `npm i typescript`
+- `npm i typescript -g`
 - `npm i tsc -D`
 - Add script
 
