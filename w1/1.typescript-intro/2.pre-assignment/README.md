@@ -2,7 +2,7 @@
 
 - Create a Node Project
 - Install `typescript` and `tsc`
-- Add Scripts to run the file.
+- Add Scripts to run the files.
 
 # Assignments
 
