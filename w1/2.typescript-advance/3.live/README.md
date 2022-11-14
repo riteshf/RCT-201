@@ -19,6 +19,17 @@ let down = Direction1.Down; // 1
 
 ## [Tuple](https://www.typescriptlang.org/docs/handbook/variable-declarations.html#tuple-destructuring)
 
+```ts
+// Array with exact 2 elements
+let a: [string, string] = ["Hi", "Bye"];
+
+// 2 D array
+let arr: Array<[number, number]> = [
+  [1, 1],
+  [2, 2],
+];
+```
+
 ## [keyof](https://www.typescriptlang.org/docs/handbook/2/keyof-types.html)
 
 The keyof operator takes an object type and produces a string or numeric literal union of its keys. The following type P is the same type as “x” | “y”:
@@ -37,3 +48,7 @@ const getValue2 = (obj: Person, key: P) => {
 getValue2(person1, "name"); // Okay
 getValue2(person1, "Name"); // Error
 ```
+
+## [typeof](https://www.typescriptlang.org/docs/handbook/2/typeof-types.html)
+
+Copying type from other object/variable without knowing tyoes ourself
