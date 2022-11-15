@@ -3,9 +3,12 @@ node_modules/
 .DS_Store
 
 # Custom
-1.pre-class/
+**/1.pre-class/record/
+**/1.pre-class/practice/
+
 *.eval/sol/
 **/sol/
 assets/
 notes.md
 Speech.md
+*.mp4
