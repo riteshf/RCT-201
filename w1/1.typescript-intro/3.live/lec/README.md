@@ -9,7 +9,13 @@ npm init -y
 2. Install Typescript and Typescript Compiler as developer dependencies
 
 ```cmd
-npm i tsc typescript --save-dev
+npm i  typescript -g
+```
+
+3. Creates a tsconfig file
+
+```
+tsc --init
 ```
 
 3. Create a starting file `index.ts`

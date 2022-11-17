@@ -7,6 +7,7 @@ node_modules/
 **/1.pre-class/practice/
 
 *.eval/sol/
+**/lec/
 **/sol/
 assets/
 notes.md
