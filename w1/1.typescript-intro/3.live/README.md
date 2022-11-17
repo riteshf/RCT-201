@@ -10,7 +10,7 @@
 
 - `npm init -y`
 - `npm i typescript -g`
-- `npm i tsc -D`
+- `tsc --init`
 - Add script
 
 ```json

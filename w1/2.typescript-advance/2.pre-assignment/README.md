@@ -1,8 +1,9 @@
 ## Getting Started
 
 1. Node project Setup
-2. Installed Dependencies
-3. Add Scripts
+2. `tsc --init`
+3. Installed Dependencies
+4. Add Scripts
 
 ## Assignments
 
