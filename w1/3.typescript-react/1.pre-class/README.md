@@ -11,6 +11,10 @@ npx create-react-app lec --template typescript
 
 ### Task
 
-1. Create a Simple Counter App with Typescript
+1. Create a Button Component with Typescript
+   - color
+   - handleClick
+   - children
+2. Create a Simple Counter App with Typescript
    - Explain Generic Hook Fuction.
    - Props with Typescript
