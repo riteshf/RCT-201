@@ -3,7 +3,7 @@
 ### Getting Started
 
 - `npm init -y`
-- `tsc init`
+- `tsc --init`
 - Configure `tsconfig.json` file
 
 ```json
@@ -109,4 +109,127 @@ Copying type from other object/variable without knowing tyoes ourself
 ```ts
 let s = "hello";
 let n: typeof s;
+```
+
+- [interface](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#interfaces)
+
+An interface declaration is another way to name an object type:
+
+- Differences Between Type Aliases and Interfaces
+
+  - Type aliases and interfaces are very similar, and in many cases you can choose between them freely. Almost all features of an interface are available in type, the key distinction is that a type cannot be re-opened to add new properties vs an interface which is always extendable.
+
+```ts
+interface Point {
+  x: number;
+  y: number;
+}
+
+function printCoord(pt: Point) {
+  console.log("The coordinate's x value is " + pt.x);
+  console.log("The coordinate's y value is " + pt.y);
+}
+
+printCoord({ x: 100, y: 100 });
+```
+
+- [class]()
+
+Classes are a template for creating objects. They encapsulate data with code to work on that data. Classes in JS are built on prototypes but also have some syntax and semantics that are not shared with ES5 class-like semantics.
+
+We can define a structure for a Class in Typescript:
+
+```ts
+class Employee {
+  empCode: number;
+  empName: string;
+
+  constructor(empcode: number, name: string) {
+    this.empCode = empcode;
+    this.name = name;
+  }
+}
+
+let emp = new Employee(100, "Steve");
+```
+
+- [Inheritance](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html#extends)
+
+Just like object-oriented languages such as Java and C#, TypeScript classes can be extended to create new classes with inheritance, using the keyword `extends`.
+
+```ts
+class Person {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+class Employee extends Person {
+  empCode: number;
+
+  constructor(empcode: number, name: string) {
+    super(name);
+    this.empCode = empcode;
+  }
+
+  displayName(): void {
+    console.log("Name = " + this.name + ", Employee Code = " + this.empCode);
+  }
+}
+
+let emp = new Employee(100, "Bill");
+emp.displayName(); // Name = Bill, Employee Code = 100
+```
+
+- Class Implements Interface
+
+A real world scenerio of using class, interface together
+
+```ts
+interface IPerson {
+  name: string;
+  display(): void;
+}
+
+interface IEmployee {
+  empCode: number;
+}
+
+class Employee implements IPerson, IEmployee {
+  empCode: number;
+  name: string;
+
+  constructor(empcode: number, name: string) {
+    this.empCode = empcode;
+    this.name = name;
+  }
+
+  display(): void {
+    console.log("Name = " + this.name + ", Employee Code = " + this.empCode);
+  }
+}
+
+let per: IPerson = new Employee(100, "Bill");
+per.display(); // Name = Bill, Employee Code = 100
+
+let emp: IEmployee = new Employee(100, "Bill");
+emp.display(); //Compiler Error: Property 'display' does not exist on type 'IEmployee'
+```
+
+- Interface extends Class
+
+real work scenario of interface using a class
+
+```ts
+class Person {
+  name: string;
+}
+
+interface IEmployee extends Person {
+  empCode: number;
+}
+
+let emp: IEmployee = { empCode: 1, name: "James Bond" };
 ```
