@@ -34,13 +34,17 @@ npx create-react-app lec --template typescript
 3. create a `db.json` file.
 
 ```json
-[
+{
   "todos": [
-    {"id": 1, "value": "Item 1", "isCompleted": false},
-    {"id": 2, "value": "Item 2", "isCompleted": true},
-    {"id": 3, "value": "Item 3", "isCompleted": true}
+    { "id": 1, "type": "Learned", "message": "useState", "likes": 2 },
+    { "id": 2, "type": "Learned", "message": "useEffect", "likes": 3 },
+    { "id": 3, "type": "Learning", "message": "useRef", "likes": 0 },
+    { "id": 4, "type": "Pending", "message": "useReducer", "likes": 5 },
+    { "id": 5, "type": "Revision", "message": "React-101", "likes": 2 },
+    { "id": 6, "likes": 0, "message": "redux", "type": "Pending" },
+    { "id": 7, "likes": 0, "message": "Typescript", "type": "Learning" }
   ]
-]
+}
 ```
 
 4. Start `json-server` on port: `8080`
