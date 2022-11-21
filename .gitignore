@@ -8,7 +8,7 @@ node_modules/
 
 *.eval/sol/
 *.eval/README.md
-**/lec/
+# **/lec/
 **/sol/
 assets/
 notes.md
