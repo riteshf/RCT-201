@@ -1,10 +1,10 @@
-### Custom Hooks
+# [Custom Hooks](https://www.canva.com/design/DAFRQK1zIbg/wkxICQR28RsWOZ89u3fyTw/view?utm_content=DAFRQK1zIbg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 Creating our own hooks to common-out the logic.
 
 ### Getting started
 
-- Go to `lec` folder
+- Go to `boiler` folder
 - `npm i`
 - `npm start`
 
