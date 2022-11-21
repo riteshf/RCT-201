@@ -15,7 +15,7 @@ const { loading, data, error, refetch } = useFetch(apiFn, initialData);
 - Signature:
 
 ```js
-const { loading, data, error, execute } = useFetch(apiFn);
+const { loading, data, error, execute } = useDelayedFetch(apiFn);
 // Here execute is used to execute the apiFn with params
 execute(params);
 ```

@@ -1,9 +1,31 @@
-### 2 Hooks
+### Custom Hooks
 
-- 20 minutes
-- I: 20 mins
-  - useMyReducer
-- We: 45 mins
-  - useAPI
-- You: 45 minutes
-  - useDelayedAPI
+Creating our own hooks to common-out the logic.
+
+### Getting started
+
+- Go to `lec` folder
+- `npm i`
+- `npm start`
+
+### Goal
+
+- Create custom hook for Stopwatch
+
+```js
+const { time, start, stop, pause } = useStopwatch();
+```
+
+- Create custom hook for Fetch API
+
+```js
+const { loading, error, data, refetch } = useFetch(apiFn);
+```
+
+- Create custom hook for Delayed Fetch API
+
+```js
+const { loading, data, error, execute } = useDelayedFetch(apiFn);
+// Here execute is used to execute the apiFn with params
+execute(params);
+```
