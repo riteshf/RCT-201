@@ -15,7 +15,7 @@
 3. Select a framework: › React
 4. Select a variant: › JavaScript
 5. cd lec
-6. `npm i redux react-redux`
+6. `npm i redux react-redux axios`
 7. `npm run dev`
 
 ### Do Following
