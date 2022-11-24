@@ -4,7 +4,10 @@ Storybook is a tool for UI development. It makes development faster and easier b
 
 ### Getting Started
 
-1. `npx create-react-app record`
-2. `cd record`
-3. `npx storybook init`
-4. type `y` and then enter to proceed.
+1. `npm create vite@latest`.
+2. Project name: `record`
+3. Select a framework: › React
+4. Select a variant: › JavaScript
+5. cd record
+6. `npx storybook init`
+7. type `y` and then enter to proceed.
