@@ -2,6 +2,8 @@
 
 Rendering is the process of retrieving a web page, launching the code, and assessing the structure and design of a page. Rendering can occur in a number of ways; client-side, server-side, and dynamic.
 
+![](./assets/rendering.jpeg)
+
 ### Client Side Rendering ?
 
 With a client-side rendering solution, you redirect the request to a single HTML file and the server will deliver it without any content (or with a loading screen) until you fetch all the JavaScript and let the browser compile everything before rendering the content.
@@ -44,5 +46,27 @@ Next.js is an open-source web development framework created by Vercel enabling R
 
 - Created by Vercel
 - ReactJS to production.
+- It is not a SPA(Single page Application)
 
 ### Getting started
+
+- `npx create-next-app@latest`
+- Need to install the following packages:.....Ok to proceed? (y) y
+- What is your project named? … record
+- Would you like to use TypeScript with this project? … No / Yes - `No`
+- Would you like to use ESLint with this project? … No / Yes - `Yes`
+- cd record
+- npm run dev
+
+### Understanding NextJS
+
+- Routing
+  - pages folder
+  - `pages/_app.js`
+  - `pages/index.js`
+- Pre-rendering
+- Not JS
+
+### Goal
+
+- Create a Simple Counter Example
