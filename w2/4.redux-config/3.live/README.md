@@ -1,10 +1,13 @@
 ### Learning Goals
 
+- recap
+
+  - Redux DevTools
+    - debugging
+    - Time Travel and other features
+  - compose
+
 - combineReducers
-- Redux DevTools
-  - debugging
-  - Time Travel and other features
-- compose
 - applyMiddleware
   - logger
 
