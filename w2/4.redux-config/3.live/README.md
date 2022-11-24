@@ -10,7 +10,16 @@
 
 ### Getting started
 
-1. create a react application.
-2. install `redux` and `react-redux`.
-3. Create `actionTypes`, `actions`, `reducer` and `store`.
-4. Wrap our App with react-redux -> Provider
+1. `npm create vite@latest`.
+2. Project name: `lec`
+3. Select a framework: › React
+4. Select a variant: › JavaScript
+5. cd lec
+6. `npm i redux react-redux`
+7. `npm run dev`
+
+### Do Following
+
+1. Create `actionTypes`, `actions`, `reducer` and `store`.
+2. Wrap our App with react-redux -> Provider.
+3. create a whole todo + counter app.
