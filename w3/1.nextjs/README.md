@@ -9,7 +9,13 @@
 7. Where to use NextJS ?
 8. Explain NextJS folder and file structure.
 9. Explain build process in NextJS.
-10. Coding
-    - PA: Create a Simple Todo App with NextJS
-    - Live: Create a Blogs Website.
-    - A: Create your own blogging website.
+10. Routing
+    - File based routing
+    - Dynamic Routes
+    - Link tag
+
+### Coding
+
+- PA: Create a Simple Todo App with NextJS
+- Live: Create a Blogs Website.
+- A: Create your own blogging website.
