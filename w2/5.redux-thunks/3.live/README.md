@@ -13,7 +13,7 @@ Redux Thunk is a middleware used in Redux to handle async requests
 ### Getting started
 
 - `cd boil`
-- `npm i `
+- `npm i redux react-redux redux-thunk`
 - `json-server --watch db.json --port 8080`
 - in second terminal: `npm start`
 
