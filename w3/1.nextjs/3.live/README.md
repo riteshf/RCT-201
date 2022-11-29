@@ -14,8 +14,15 @@ NextJS is a React tool used to make server-side rendered frontend applications.
 
 ## Goal
 
-- Build a Blog Website.
+- project structure
+- page based routing.
+- server side rendering(SSR)
+  - `getServerSideProps`
+
+## Coding
+
+- Build a Static Blog Website.
 - Routes:
   - `/`: Should/lists all blogs
-  - `/[slug]`: Shows specific blog details
-- Deploy using vercel.
+  - `/about`: about page
+  - other routes
