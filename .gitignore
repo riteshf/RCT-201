@@ -6,8 +6,7 @@ node_modules/
 **/1.pre-class/record/
 **/1.pre-class/practice/
 
-*.eval/sol/
-*.eval/README.md
+*.eval/
 **/lec/
 **/sol/
 assets/
