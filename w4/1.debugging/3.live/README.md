@@ -2,21 +2,21 @@
 
 A way of finding errors.
 
-### What is Debugging ?
+### What is Debugging?
 
 Debugging is the process of detecting and removing of existing and potential errors (also called as 'bugs') in a software code that can cause it to behave unexpectedly or crash.
 
-### Why do we need Debugging ?
+### Why do we need Debugging?
 
-To prevent incorrect operation of a software or system, debugging is used to find and resolve bugs or defects.
+To prevent incorrect operation of software or system, debugging is used to find and resolve bugs or defects.
 
-### How to debug ?
+### How to debug?
 
-We log the infromation and go back and front from vscode to browser to see if the infomation flowing is correct.
+We log the information and go back and front from vscode to the browser to see if the information flowing is correct.
 
-### What is the right way of debugging ?
+### What is the right way of debugging?
 
-Using browser feature to debug frontend and using vscode features to debug backend.
+Using browser features to debug the front-end and using vscode features to debug the backend.
 
 ### Browser Debugging
 
