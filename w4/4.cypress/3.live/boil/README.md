@@ -8,14 +8,15 @@ It is used to do both component testing and E2E testing, we will be focusing on 
 
 1. `cd boil`
 2. `npm i cypress@latest -D`
-3.
-4. [`npx cypress open`](https://docs.cypress.io/guides/getting-started/opening-the-app)
-5. This is open a browser interface, select following
+3. `npm run start`
+4. `json-server --watch db.json --port 8080`: on 2nd terminal.
+5. [`npx cypress open`](https://docs.cypress.io/guides/getting-started/opening-the-app)
+6. This is open a browser interface, select following
    1. Click on `E2E Testing`.
    2. Click on `continue` button.
    3. Choose your browser: `Chrome`, then click on `Start E2E testing on Chrome`.
    4. Create a new test
-6. This will create a `cypress.json` file and a cypress fodler.
+7. This will create a `cypress.json` file and a cypress fodler.
 
 ### First test
 
