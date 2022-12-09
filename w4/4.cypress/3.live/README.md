@@ -1,67 +1,35 @@
 ### [Cypress.io: https://www.cypress.io/](https://www.cypress.io/)
 
+It is used to do both component testing and E2E testing, we will be focusing on E2E testing.
+
+- We will be testing End-2-End Workflows using cypress.
+
 ### [Getting Started](https://docs.cypress.io/guides/getting-started/installing-cypress#What-you-ll-learn)
 
 1. `cd boil`
-2. `npm i cypress -D`
+2. `npm i cypress@latest -D`
+3.
+4. [`npx cypress open`](https://docs.cypress.io/guides/getting-started/opening-the-app)
+5. This is open a browser interface, select following
+   1. Click on `E2E Testing`.
+   2. Click on `continue` button.
+   3. Choose your browser: `Chrome`, then click on `Start E2E testing on Chrome`.
+   4. Create a new test
+6. This will create a `cypress.json` file and a cypress fodler.
 
-### Basic setup
+### First test
 
-API DOCS - [https://docs.cypress.io/api/api/table-of-contents.html](https://docs.cypress.io/api/api/table-of-contents.html)
+We can write our first test
 
-```
-npm install cypress --save-dev
-```
+- **Note**: Keep your app runing on `locathost:3000`
 
-goto package.json
-
-add to the scripts object
-
-```json
-"cypress" : "cypress open"
-```
-
-After that you can run
-
-```
-npm run cypress
-```
-
-with this you will be able to see cypress dashboard open.
-
-If you are setting it up for the first time, it will have an examples folder inside cypress folder with many examples
-that you can see what all you can run.
-
-You will see a cypress.json (which is empty) and cypresss
-
-you can remove the examples folder after that.
-
-```
-- cypress
-    - fixtures
-    - integration # test files
-    - support
-```
-
-Write your first test file
-
-Make a file inside the integration folder
-
-- example.spec.js
-
-```javascript
-describe("Input form", () => {
-  it("visit home page", () => {
-    // this is an example test description
-    // it is similar to how you wrote test in jest
-    cy.visit("http://localhost:3000"); // make sure its the same url of your application
+```js
+describe.only("empty spec", () => {
+  it("passes", () => {
+    cy.visit("localhost:3000");
   });
 });
 ```
-
-Thats it you have setup the basic requirements for cypress!
-
-That was easy.
 
 References:
 
@@ -75,15 +43,16 @@ we can have a class identifier on the input tag and check what item is focused a
 
 ```javascript
 describe("Input form", () => {
-  it("visit home page", () => {
+  it("type in input box", () => {
     // this is an example test description
     // it is similar to how you wrote test in jest
     cy.visit("http://localhost:3000"); // make sure its the same url of your application
 
-    cy.focused() // Yields the element currently in focus
-      .should("have.class", ".task-input"); // checks that if the focused element has class `.task-input`
-    // if cypress doesn't find an element, it will keep trying till it times out and throws an error
-    // add an autoFocus on the input tag and make sure that .task-input is on the class name
+    cy.get('[data-testid="todo-input"]')
+      .focus()
+      .type(text)
+      .should("have.value", text);
+    // finding an element with data-testid and typing in it.
   });
 });
 ```
@@ -97,10 +66,7 @@ it.only("input tag field", () => {
   //remove only once you are done testing
   cy.visit("http://localhost:3000");
   const text = "BUY BREAD";
-  cy.get(".task-input") // accepts selector, alias as argument
-    .type(text) // types into the selected element.
-    // it will throw error if you try to write to invalid elements
-    .should("have.value", text);
+  cy.get('[data-testid="todo-input"]').focus().type("bbb").type("{enter}");
 });
 ```
 
@@ -119,7 +85,7 @@ describe("Input form", () => {
     // easier to work with for entire application
   });
   it("visit home page", () => {
-    cy.focused().should("have.class", ".task-input");
+    cy.focused().should("have.class", ".todo-input");
   });
 
   it("input tag field", () => {
