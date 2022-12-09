@@ -1,70 +1,297 @@
-# Getting Started with Create React App
+### [Cypress.io: https://www.cypress.io/](https://www.cypress.io/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It is used to do both component testing and E2E testing, we will be focusing on E2E testing.
 
-## Available Scripts
+- We will be testing End-2-End Workflows using cypress.
 
-In the project directory, you can run:
+### [Getting Started](https://docs.cypress.io/guides/getting-started/installing-cypress#What-you-ll-learn)
 
-### `npm start`
+1. `cd boil`
+2. `npm i cypress@latest -D`
+3.
+4. [`npx cypress open`](https://docs.cypress.io/guides/getting-started/opening-the-app)
+5. This is open a browser interface, select following
+   1. Click on `E2E Testing`.
+   2. Click on `continue` button.
+   3. Choose your browser: `Chrome`, then click on `Start E2E testing on Chrome`.
+   4. Create a new test
+6. This will create a `cypress.json` file and a cypress fodler.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### First test
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+We can write our first test
 
-### `npm test`
+- **Note**: Keep your app runing on `locathost:3000`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```js
+describe.only("empty spec", () => {
+  it("passes", () => {
+    cy.visit("localhost:3000");
+  });
+});
+```
 
-### `npm run build`
+References:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- visit - https://docs.cypress.io/api/commands/visit.html#Syntax
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Working with input tags
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Now lets look at the input tags. and we want a basic form that on load, should focus on the input.
 
-### `npm run eject`
+we can have a class identifier on the input tag and check what item is focused after logging in
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```javascript
+describe("Input form", () => {
+  it("type in input box", () => {
+    // this is an example test description
+    // it is similar to how you wrote test in jest
+    cy.visit("http://localhost:3000"); // make sure its the same url of your application
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    cy.get('[data-testid="todo-input"]')
+      .focus()
+      .type(text)
+      .should("have.value", text);
+    // finding an element with data-testid and typing in it.
+  });
+});
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+lets add another test to check the value of the input tag
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+we can use `it.only` to run that test
 
-## Learn More
+```javascript
+it.only("input tag field", () => {
+  //remove only once you are done testing
+  cy.visit("http://localhost:3000");
+  const text = "BUY BREAD";
+  cy.get('[data-testid="todo-input"]').focus().type("bbb").type("{enter}");
+});
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+if you add state variable to the value of the input with the change handler, you will get an error message when you run the test suite
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can see that cy.visit is being called again, and its duplicate logic.
 
-### Code Splitting
+we can run a beforeEach on all the test cases
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```javascript
+describe("Input form", () => {
+  beforeEach(() => {
+    cy.visit("http://localhost:3000");
+    // add a cy visit in beforeEach test
+    //  we can add a baseUrl in the cypress.json to make it
+    // easier to work with for entire application
+  });
+  it("visit home page", () => {
+    cy.focused().should("have.class", ".todo-input");
+  });
 
-### Analyzing the Bundle Size
+  it("input tag field", () => {
+    const text = "BUY BREAD";
+    cy.get(".task-input").type(text).should("have.value", text);
+  });
+});
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+we can even make it better by adding a baseUrl in the cypress.json
 
-### Making a Progressive Web App
+```json
+{
+  "baseUrl": "http://localhost:3000"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+with this in place your whole application will use the baseUrl
 
-### Advanced Configuration
+we can modify the visit request to the route now
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```javascript
+cy.visit("/");
+```
 
-### Deployment
+References:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- focused - https://docs.cypress.io/api/commands/focused.html#Syntax
+- should - https://docs.cypress.io/api/commands/should.html
+- get - https://docs.cypress.io/api/commands/get.html
+- type - https://docs.cypress.io/api/commands/type.html
 
-### `npm run build` fails to minify
+### Working with forms and XHR requests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You can also enter (mock a keyboard enter) and click on buttons with cypress.
+
+```javascript
+it("Add a new item on submit of form", () => {
+  cy.get(".task-input").type("BUY MILK").type("{enter}"); // wrap it around curly braces
+});
+// if you do not have a preventDefault behavior then it will trigger a refresh, which
+// will be logged on cypress test suite
+```
+
+- We will create a network request for making the task application with axios for making a post request.
+- now even though our server does not work, we can mock it in cypress.
+- make sure that you add the response to your state
+
+```javascript
+const addData = (data) => {
+  return axios.post("localhost:3000/api/task", data);
+};
+
+handleSubmit = (e) => {
+  e.preventDefault();
+  const item = { title: this.state.newItem, completed: false };
+  addData(item).then(({ data }) =>
+    this.setState({ tasks: [...this.state.tasks, data] })
+  );
+};
+```
+
+at this point if you run the test suite
+
+```javascript
+it("Add a new item on submit of form", () => {
+  const text = "BUY MILK";
+  cy.server(); // create a server
+  cy.route(
+    "POST", // method
+    "/api/task", // url
+    {
+      // response
+      title: text,
+      id: 1,
+      completed: false,
+    }
+  );
+  cy.get(".task-input").type(text).type("{enter}"); // wrap it around curly braces
+  // now cypress will respond with information that we provided earlier
+  cy.get(".task-list li") //
+    .should("have.length", 1)
+    .and("contain", text);
+});
+```
+
+lets add another test case to see what happens when the request fails.
+
+```javascript
+handleSubmit = (e) => {
+  e.preventDefault();
+  const item = { title: this.state.newItem, completed: false };
+  addData(item)
+    .then(({ data }) => this.setState({ tasks: [...this.state.tasks, data] }))
+    // lets add a .catch to handle the error
+    .catch((err) => this.setState({ error: true }));
+};
+```
+
+```javascript
+it("error message when adding a new item on submit of form", () => {
+  const text = "BUY MILK";
+  cy.server(); // create a server
+  cy.route({
+    // we can also pass a configuration or options into the route method
+    url: "/api/task", // url
+    status: 500, // status code
+    method: "POST", // method
+    response: {}, // empty response
+  });
+  cy.get(".task-input").type(text).type("{enter}"); // wrap it around curly braces
+
+  // now cypress will respond with the 500 error response
+
+  cy.get(".task-list li") //
+    .should("not.exist"); // there should not be any task created
+
+  cy.get(".error").should("be.visible");
+});
+```
+
+References:
+
+- server - https://docs.cypress.io/api/commands/server.html
+- route - https://docs.cypress.io/api/commands/route.html
+- and - https://docs.cypress.io/api/commands/and.html
+- route - options - https://docs.cypress.io/api/commands/route.html#Options
+
+### Mocking data with fixtures
+
+We can load initial data for our application. We can also mock this, by using Fixtures in cypress.
+
+so lets write an axios call for that
+
+```javascript
+// in utils
+const loadData = () => axios.get('http:localhost:3030/api/tasks')
+
+// in component
+componentDidMount(){
+    loadData.then( {data} => this.setState( tasks: {data}) )
+}
+
+// in test file
+const tasks = [
+    {
+        title: 'BUY BREAD',
+        id: 1,
+        completed: false
+    },
+    {
+        title: 'BUY MILK',
+        id: 2,
+        completed: false
+    },
+    {
+        title: 'BUY TOMATOES',
+        id: 3,
+        completed: false
+    },
+ ]
+
+describe('App initialize',()=>{
+    it('load tasks on loading page', ()=>{
+        cy.server()
+        cy.route('GET', '/api/tasks/', tasks )
+        cy.visit('/')
+
+        cy.get('.task-list li')
+            .should('have.length', 3)
+
+    })
+})
+
+```
+
+we can move the tasks to the `fixtures` folder, and call it `tasks.json`
+
+tasks.json
+
+```json
+[
+  {
+    "title": "BUY BREAD",
+    "id": 1,
+    "completed": false
+  },
+  {
+    "title": "BUY MILK",
+    "id": 2,
+    "completed": false
+  },
+  {
+    "title": "BUY TOMATOES",
+    "id": 3,
+    "completed": false
+  }
+]
+```
+
+we can now use this fixture in any of our tests
+
+```javascript
+cy.route("GET", "/api/tasks/", "fixture:tasks");
+```
+
+References:
+
+- routes - fixture - https://docs.cypress.io/api/commands/route.html#Fixtures
