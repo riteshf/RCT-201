@@ -1,8 +1,11 @@
-#### Cypress.io
+### [Cypress.io: https://www.cypress.io/](https://www.cypress.io/)
+
+### [Getting Started](https://docs.cypress.io/guides/getting-started/installing-cypress#What-you-ll-learn)
+
+1. `cd boil`
+2. `npm i cypress -D`
 
 ### Basic setup
-
-[https://www.cypress.io/](https://www.cypress.io/)
 
 API DOCS - [https://docs.cypress.io/api/api/table-of-contents.html](https://docs.cypress.io/api/api/table-of-contents.html)
 
