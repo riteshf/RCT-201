@@ -9,7 +9,7 @@ It is used to do both component testing and E2E testing, we will be focusing on 
 1. `cd boil`
 2. `npm i cypress@latest -D`
 3. `npm run start`
-4. `json-server --watch db.json --port 8080`: on 2nd terminal.
+4. `json-server --watch db.json --port 4004`: on 2nd terminal.
 5. [`npx cypress open`](https://docs.cypress.io/guides/getting-started/opening-the-app)
 6. This is open a browser interface, select following
    1. Click on `E2E Testing`.
