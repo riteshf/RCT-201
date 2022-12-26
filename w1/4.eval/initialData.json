@@ -1,0 +1,8 @@
+[
+  { "id": 1, "type": "Completed", "message": "useState", "likes": 2 },
+  { "id": 2, "type": "Completed", "message": "useEffect", "likes": 3 },
+  { "id": 3, "type": "Pending", "message": "useRef", "likes": 0 },
+  { "id": 4, "type": "Revision", "message": "useReducer", "likes": 5 },
+  { "id": 5, "type": "Revision", "message": "React-101", "likes": 2 },
+  { "id": 5, "type": "New", "message": "Custom Hooks", "likes": 2 }
+]

@@ -1,0 +1,32 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Blog 1",
+      "description": "This is blog 1",
+      "author": "ritesh",
+      "createdOn": 1669728310804
+    },
+    {
+      "id": 2,
+      "title": "Blog 2",
+      "description": "This is blog 2",
+      "author": "ritesh",
+      "createdOn": 1669728320804
+    },
+    {
+      "id": 3,
+      "title": "Blog 3",
+      "description": "This is blog 3",
+      "author": "ritesh",
+      "createdOn": 1669748310804
+    },
+    {
+      "id": 4,
+      "title": "Blog 4",
+      "description": "This is blog 4",
+      "author": "ritesh",
+      "createdOn": 1669748310804
+    }
+  ]
+}

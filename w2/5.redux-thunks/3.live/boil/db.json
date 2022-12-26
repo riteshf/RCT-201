@@ -1,0 +1,14 @@
+{
+  "posts": [
+    { "id": 1, "message": "POST 1" },
+    { "id": 2, "message": "POST 2" },
+    { "id": 3, "message": "POST 3" },
+    { "id": 4, "message": "POST 4" }
+  ],
+  "feeds": [
+    { "id": 1, "message": "Feed 1" },
+    { "id": 2, "message": "Feed 2" },
+    { "id": 3, "message": "Feed 3" },
+    { "id": 4, "message": "Feed 4" }
+  ]
+}
