@@ -4,14 +4,15 @@ A Library that allows us to use redux with react.
 
 ### Getting started
 
-1. npx create-react-app lec.
-2. npm i redux react-redux.
-3. create a simple todo app.
+1. `npx create-react-app lec`
+2. `cd lec`
+3. `npm i redux react-redux`
+4. create a simple todo app.
    - create types
    - create actions
    - create reudcer
    - create store
-4. Bind this with react app, by wrapping react app with react-redux provider.
+5. Bind this with react app, by wrapping react app with react-redux provider.
 
 ```jsx
 //index.js
