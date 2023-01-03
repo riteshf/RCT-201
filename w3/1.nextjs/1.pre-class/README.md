@@ -2,7 +2,7 @@
 
 Rendering is the process of retrieving a web page, launching the code, and assessing the structure and design of a page. Rendering can occur in a number of ways; client-side, server-side, and dynamic.
 
-![](./assets/rendering.jpeg)
+![](../assets/rendering.jpeg)
 
 ### Client Side Rendering ?
 
@@ -12,7 +12,7 @@ Under a good and reliable internet connection, it’s pretty fast and works well
 
 - Note: `create-react-app` does client side rendering.
 
-![](./assets/csr.png)
+![](../assets/csr.png)
 
 ### What is Service Side Rendering
 
@@ -20,11 +20,11 @@ In SSR, when the user makes a request to the webpage, the server prepares the HT
 
 - Note: `npx create-next-app@latest` uses server side rendering.
 
-![](./assets/ssr.png)
+![](../assets/ssr.png)
 
 ### SSR vs CSR
 
-![](./assets/ssr-vs-csr.png)
+![](../assets/ssr-vs-csr.png)
 
 ### When to use server-side rendering
 
