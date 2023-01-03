@@ -32,8 +32,9 @@ NextJS is a React tool used to make server-side rendered frontend applications.
 
 ## Coding
 
-- Build a Static Blog Website.
+- Build a Static multi page Website.
 - Routes:
-  - `/`: Should/lists all blogs
-  - `/about`: about page
-  - other routes
+  - `/`: Default page
+  - `/counter`: Counter APP page
+  - `/todo`: about page
+  - `/404` : Not found page
