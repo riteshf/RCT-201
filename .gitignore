@@ -9,7 +9,6 @@ node_modules/
 *.eval/
 **/lec/
 **/sol/
-assets/
 notes.md
 Speech.md
 *.mp4
