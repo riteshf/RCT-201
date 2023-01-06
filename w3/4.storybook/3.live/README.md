@@ -1,7 +1,7 @@
 ### Getting Started
 
 1. `npm create vite@latest`.
-2. Project name: `record`
+2. Project name: `lec`
 3. Select a framework: › React
 4. Select a variant: › JavaScript
 5. cd record
