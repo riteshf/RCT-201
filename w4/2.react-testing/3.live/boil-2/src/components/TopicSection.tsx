@@ -30,9 +30,12 @@ const TopicSection = ({ topicType, topics }: TopicSectionProps) => {
   }, [topics]);
 
   return (
-    <Card bgColor={info.sectionBgColor} data-cy={`topic-section-${topicType}`}>
+    <Card
+      bgColor={info.sectionBgColor}
+      data-testid={`topic-section-${topicType}`}
+    >
       <CardHeader>
-        <Heading size="md" data-cy="topic-title">
+        <Heading size="md" data-testid="topic-title">
           {info.title}
         </Heading>
       </CardHeader>
@@ -53,7 +56,7 @@ const TopicSection = ({ topicType, topics }: TopicSectionProps) => {
           leftIcon={<BiMessageSquareAdd />}
           disabled={addNew}
           onClick={() => setAddNew(true)}
-          data-cy="topic-add-btn"
+          data-testid="topic-add-btn"
         >
           Add New
         </Button>

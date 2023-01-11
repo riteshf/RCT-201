@@ -15,10 +15,10 @@ import { Topic, TopicType } from "../constants";
 const TopicsBoard = () => {
   const { topics } = useContext(TopicsContext);
   return (
-    <Container maxW="container.xl" data-cy="topics-board">
+    <Container maxW="container.xl" data-testid="topics-board">
       <Center flexDirection="column">
         <Heading>Topics Board</Heading>
-        <Heading as="h2" data-cy="total-topics">
+        <Heading as="h2" data-testid="total-topics">
           Total topics: {topics.length}
         </Heading>
       </Center>

@@ -31,7 +31,7 @@ const TopicInput = ({ type, onCancel }: TopicInputProps) => {
             maxLength={20}
             value={value}
             onChange={handleChange}
-            data-cy="input-topic"
+            data-testid="input-topic"
           />
           <Flex justify="space-between" flexWrap="wrap">
             <Button
@@ -39,7 +39,7 @@ const TopicInput = ({ type, onCancel }: TopicInputProps) => {
               variant="ghost"
               leftIcon={<BiSave />}
               onClick={handleSave}
-              data-cy="save-topic-btn"
+              data-testid="save-topic-btn"
             >
               Save
             </Button>
@@ -48,7 +48,7 @@ const TopicInput = ({ type, onCancel }: TopicInputProps) => {
               variant="ghost"
               leftIcon={<MdOutlineCancel />}
               onClick={onCancel}
-              data-cy="cancel-add-topic-btn"
+              data-testid="cancel-add-topic-btn"
             >
               Cancel
             </Button>

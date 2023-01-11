@@ -17,9 +17,9 @@ const TopicItem = (props: TopicItemProps) => {
     deleteTopic && deleteTopic(props.id);
   };
   return (
-    <Card bgColor={info.itemBgColor} data-cy="topic-item">
+    <Card bgColor={info.itemBgColor} data-testid="topic-item">
       <CardBody>
-        <Heading as={"h6"} data-cy="topic-message">
+        <Heading as={"h6"} data-testid="topic-message">
           {props.message}
         </Heading>
         <Flex justify="space-between" flexWrap="wrap" gap={2}>
@@ -28,7 +28,7 @@ const TopicItem = (props: TopicItemProps) => {
             variant="ghost"
             leftIcon={<BiLike />}
             onClick={updateLikeCountHandle}
-            data-cy="like-topic-btn"
+            data-testid="like-topic-btn"
           >
             ({props.likes}) Likes
           </Button>
@@ -37,7 +37,7 @@ const TopicItem = (props: TopicItemProps) => {
             variant="ghost"
             leftIcon={<BiTrash />}
             onClick={onDeleteHandle}
-            data-cy="delete-topic-btn"
+            data-testid="delete-topic-btn"
           >
             Delete
           </Button>
