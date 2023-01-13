@@ -25,6 +25,7 @@
      - `src/styles` replace
      - `src/utils` replace
    - files
+   - `next.config.js` replace
    - `src/pages/_app.tsx` replace
    - `src/pages/index.tsx` remove all code from this file, just a basic component
 
