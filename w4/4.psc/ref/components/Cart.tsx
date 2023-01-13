@@ -11,10 +11,7 @@ import {
   Box,
   DrawerFooter,
 } from "@chakra-ui/react";
-import { useSelector } from "react-redux";
 import { BsBag } from "react-icons/bs";
-
-import { RootState } from "../redux/store";
 
 const Cart = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
