@@ -3,53 +3,23 @@ export interface Money {
   currencyCode: string;
 }
 
-export interface Image {
-  url: string;
-  width: number;
-  height: number;
-  altText: string;
-}
-
-export interface List<T> {
-  nodes: T[];
-}
-
-export interface ProductPriceRange {
-  minVariantPrice: Money;
-  maxVariantPrice: Money;
-}
-
 export interface Product {
-  id: string;
+  id: number;
   handle: string;
   title: string;
   description: string;
-  descriptionHtml: string;
-  productType: string;
-  featuredImage: Image | null;
-  images?: List<Image>;
-  variants: List<ProductVariant>;
-  priceRange: ProductPriceRange;
+  featuredImage: {
+    url: string;
+    altText: string;
+  };
+  priceRange: {
+    minVariantPrice: Money;
+    maxVariantPrice: Money;
+  };
 }
 
-export interface ProductVariant {
-  id: string;
-  priceV2: Money;
-  title: string;
-  availableForSale: boolean;
-}
-
-export interface CartData {
-  id?: string;
+export interface Cart {
+  id: number;
+  productId: number;
   quantity: number;
-  merchandise: {
-    product: {
-      title: string;
-    };
-    title: string;
-    image: Image;
-  };
-  estimatedCost: {
-    totalAmount: Money;
-  };
 }

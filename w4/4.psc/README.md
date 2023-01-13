@@ -16,8 +16,13 @@
 1. `npx create-next-app@latest lec`.
 2. `cd lec`.
 3. `npm i redux react-redux redux-thunk axios`.
-4. `npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion`.
+4. `npm install @chakra-ui/react @emotion/react @emotion/styled  framer-motion react-icons`.
 5. Wrap `_app.tsx` file with Chakra Provider.
+6. Copy paste folders from ref:
+   - `components` add
+   - `_app.tsx` replace
+   - `styles` replace
+   - `public` replace
 
 ## Thinking
 
