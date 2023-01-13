@@ -1,0 +1,112 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "handle": "sticker-sheet",
+      "title": "Deno Sticker Sheet",
+      "description": "If the sticker of a technology you use isn't on your laptop, then are you actually using it? Make sure the world knows you deploy to the edge in seconds with this fun sticker sheet.",
+      "featuredImage": {
+        "url": "https://merch-clone.s3.ap-south-1.amazonaws.com/kiss-cut-sticker-sheet-white-front-62c5b5d604ab6_400x400.jpg.webp",
+        "altText": "stickets"
+      },
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "10",
+          "currencyCode": "USD"
+        },
+        "maxVariantPrice": {
+          "amount": "",
+          "currencyCode": ""
+        }
+      }
+    },
+    {
+      "id": 2,
+      "handle": "deno-poster",
+      "title": "Poster by Mona Finden",
+      "featuredImage": {
+        "url": "https://merch-clone.s3.ap-south-1.amazonaws.com/deno-poster_400x400.png.webp",
+        "altText": "deno-poster"
+      },
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "25",
+          "currencyCode": "USD"
+        },
+        "maxVariantPrice": {
+          "amount": "",
+          "currencyCode": ""
+        }
+      }
+    },
+    {
+      "id": 3,
+      "handle": "fresh-sticker-sheet",
+      "title": "Fresh Sticker Sheet",
+      "featuredImage": {
+        "url": "https://merch-clone.s3.ap-south-1.amazonaws.com/kiss-cut-sticker-sheet-white-front-62c5b9b06299a_400x400.jpg.webp",
+        "altText": "fresh-sticker-sheet"
+      },
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "6",
+          "currencyCode": "USD"
+        },
+        "maxVariantPrice": {
+          "amount": "",
+          "currencyCode": ""
+        }
+      }
+    },
+    {
+      "id": 4,
+      "handle": "deno-play-hoodie",
+      "title": "Deno Play Hoodie",
+      "featuredImage": {
+        "url": "https://merch-clone.s3.ap-south-1.amazonaws.com/3739799_4517-2022-09-13-22-45-09-374_400x400.png.webp",
+        "altText": "deno-play-hoodie"
+      },
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "75",
+          "currencyCode": "USD"
+        },
+        "maxVariantPrice": {
+          "amount": "",
+          "currencyCode": ""
+        }
+      }
+    },
+    {
+      "id": 5,
+      "handle": "deno-pocket-tee-2",
+      "title": "Deno Pocket Tee",
+      "featuredImage": {
+        "url": "https://merch-clone.s3.ap-south-1.amazonaws.com/denopockettee-white_blue_0c05a1bc-c94f-4555-b84d-b50dfd40aba3_400x400.png.webp",
+        "altText": "deno-pocket-tee-2"
+      },
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "35",
+          "currencyCode": "USD"
+        },
+        "maxVariantPrice": {
+          "amount": "",
+          "currencyCode": ""
+        }
+      }
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "quantity": 2,
+      "productId": 1
+    },
+    {
+      "id": 1,
+      "quantity": 5,
+      "productId": 3
+    }
+  ]
+}
