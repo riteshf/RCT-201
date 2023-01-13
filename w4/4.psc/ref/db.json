@@ -11,11 +11,11 @@
       },
       "priceRange": {
         "minVariantPrice": {
-          "amount": "10",
+          "amount": 10,
           "currencyCode": "USD"
         },
         "maxVariantPrice": {
-          "amount": "",
+          "amount": 0,
           "currencyCode": ""
         }
       }
@@ -30,11 +30,11 @@
       },
       "priceRange": {
         "minVariantPrice": {
-          "amount": "25",
+          "amount": 25,
           "currencyCode": "USD"
         },
         "maxVariantPrice": {
-          "amount": "",
+          "amount": 0,
           "currencyCode": ""
         }
       }
@@ -49,11 +49,11 @@
       },
       "priceRange": {
         "minVariantPrice": {
-          "amount": "6",
+          "amount": 6,
           "currencyCode": "USD"
         },
         "maxVariantPrice": {
-          "amount": "",
+          "amount": 0,
           "currencyCode": ""
         }
       }
@@ -68,11 +68,11 @@
       },
       "priceRange": {
         "minVariantPrice": {
-          "amount": "75",
+          "amount": 75,
           "currencyCode": "USD"
         },
         "maxVariantPrice": {
-          "amount": "",
+          "amount": 0,
           "currencyCode": ""
         }
       }
@@ -87,17 +87,17 @@
       },
       "priceRange": {
         "minVariantPrice": {
-          "amount": "35",
+          "amount": 35,
           "currencyCode": "USD"
         },
         "maxVariantPrice": {
-          "amount": "",
+          "amount": 0,
           "currencyCode": ""
         }
       }
     }
   ],
-  "cart": [
+  "carts": [
     {
       "id": 1,
       "quantity": 2,
