@@ -19,10 +19,14 @@
 4. `npm install @chakra-ui/react @emotion/react @emotion/styled  framer-motion react-icons`.
 5. Wrap `_app.tsx` file with Chakra Provider.
 6. Copy paste folders from ref:
-   - `components` add
-   - `_app.tsx` replace
-   - `styles` replace
-   - `public` replace
+   - folders
+     - `public` replace
+     - `src/components` add
+     - `src/styles` replace
+     - `src/utils` replace
+   - files
+   - `src/pages/_app.tsx` replace
+   - `src/pages/index.tsx` remove all code from this file, just a basic component
 
 ## Thinking
 
