@@ -294,4 +294,4 @@ cy.route("GET", "/api/tasks/", "fixture:tasks");
 
 References:
 
-- routes - fixture - https://docs.cypress.io/api/commands/route.html#Fixtures
+- [fixture](https://docs.cypress.io/api/commands/fixture)
